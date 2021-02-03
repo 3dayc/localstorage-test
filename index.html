@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>안녕</h1>
+    <script>
+        const greeting = document.querySelector("h1");
+        const yourName = localStorage.getItem("q");
+        if (yourName === null) {
+            const d = prompt("이름을 입력해주세요.");
+            localStorage.setItem("q", d);
+            greeting.innerHTML = `안녕하세요. ${d}`;
+        } else {
+            greeting.innerHTML = `안녕하세요. ${yourName}`;
+        }
+        console.log(localStorage.getItem("q"))
+</script>
+</body>
+</html>
